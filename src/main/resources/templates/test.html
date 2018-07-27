@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <!--<script th:src="@{/static/js/test.js}"></script>-->
+</head>
+<body>
+  <div>
+      用户姓名:<input th:id="${user.name}" th:name="${user.name}" th:value="${user.name}"/>
+      <br/>
+      用户年龄:<input th:value="${user.age}"/>
+      <br/>
+      用户生日:<input th:value="${user.birthday}"/><br/>
+      用户生日:<input th:value="${#dates.format(user.birthday,'dd/MM/yyyy')}"/>
+      <br/>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+
+  <div th:object="${user}">
+      用户姓名:<input th:id="*{name}" th:name="*{name}" th:value="*{name}"/>
+      <br/>
+      用户年龄:<input th:value="*{age}"/>
+      <br/>
+      用户生日:<input th:value="*{birthday}"/><br/>
+      用户生日:<input th:value="*{#dates.format(birthday,'dd/MM/yyyy')}"/>
+      <br/>
+  </div>
+<br/>
+text与utext:<br/>
+<span th:text="${user.desc}">abc</span><br/>
+<span th:utext="${user.desc}">abc</span>
+
+
+URL:<br/>
+<a th:href="@{http://www.imooc.com}">慕课网</a><br/>
+
+<form th:action="@{/th/postform}" th:object="${user}" th:method="post">
+    <input type="text" th:field="*{name}"/>
+    <input type="text" th:field="*{age}"/>
+    <input type="submit"/>
+</form>
+<br/>
+
+<div th:if="${user.age}==18">十八岁的天空</div>
+<div th:if="${user.age} gt 18">大于18</div>
+<div th:if="${user.age} lt 18">小于18</div>
+<div th:if="${user.age} ge 18">大于等于18</div>
+<div th:if="${user.age} le 18">小于等于18</div>
+
+<br/>
+<select>
+    <option>选择框</option>
+    <option th:selected="${user.name eq 'lee'}">lee</option>
+    <option th:selected="${user.name eq 'yijialuo'}">yijialuo</option>
+    <option th:selected="${user.name eq 'laowang'}">laowang</option>
+</select>
+
+<br/>
+
+<table>
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>年龄备注</td>
+        <td>生日</td>
+    </tr>
+    <tr th:each="person:${userList}">
+        <td th:text="${person.name}"></td>
+        <td th:text="${person.age}"></td>
+        <td th:text="${person.age gt 18}? 你大于18了:你小于等于18">18</td>
+        <td th:text="${#dates.format(person.birthday,'yyyy-MM-dd hh:mm:ss')}"></td>
+    </tr>
+    <br/>
+</table>
+<br/>
+  <!--<div th:switch="${user.name}">-->
+      <!--<p th:case="'yijialuo'">yijialuo</p>-->
+      <!--<p th:case="admin">普通管理员</p>-->
+      <!--<p th:case="'superadmin'">超级管理员</p>-->
+      <!--<p th:case="*">其他 用户</p>-->
+  <!--</div>-->
+  <div   th:switch="${user.name}">
+      <p th:case="yijialuo">yijialuo</p>
+      <p th:case="manager">普通管理员</p>
+      <p th:case="superadmin">超级管理员</p>
+      <p th:case="*">其他用户</p>
+  </div>
+</body>
+</html>

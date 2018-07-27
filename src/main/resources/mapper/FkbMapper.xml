@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.FkbMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.Fkb" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="xmid" property="xmid" jdbcType="VARCHAR" />
+    <result column="fksj" property="fksj" jdbcType="VARCHAR" />
+    <result column="fklx" property="fklx" jdbcType="VARCHAR" />
+    <result column="fke" property="fke" jdbcType="VARCHAR" />
+    <result column="fkebfb" property="fkebfb" jdbcType="VARCHAR" />
+    <result column="sye" property="sye" jdbcType="VARCHAR" />
+    <result column="syebfb" property="syebfb" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

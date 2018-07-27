@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>SSE Demo</title>
+</head>
+<body>
+<div id="msgFrompPush"></div>
+
+<script type="text/javascript" src="../static/jquery.js"></script>
+<script type="text/javascript">
+//EventSource对象只有新式浏览器才有(Chrome、Firefox)，EventSource是SSE的客户端
+if(!!window.EventSource){
+    var source=new EventSource('push');
+    s='';
+//
+//    //收到服务器发生的事件时触发
+//    evtSource.onmessage = function (e) {
+//        console.log(e.data);
+//    }
+////成功与服务器发生连接时触发
+//    evtSource.onopen = function () {
+//        console.log("Server open")
+//    }
+////出现错误时触发
+//    evtSource.onerror = function () {
+//        console.log("Error")
+//    }
+//
+//    //自定义事件
+//    evtSource.addEventListener("myEvent", function (e) {
+//        console.log(e.data);
+//    }, false)
+
+
+    //添加SSE客户端监听，在此获得服务器端推送的消息
+    source.addEventListener('message',function(e){
+        console.log("addEventListener message")
+        console.log(e)
+        s+=e.data+"<br/>";
+        $("#msgFrompPush").html(s);
+    });
+   //
+    source.addEventListener('open',function(e){
+        console.log("连接打开")
+    });
+
+    source.addEventListener('error',function(e){
+        if(e.readyState==EventSource.CLOSED){
+            console.log("连接关闭");
+        }else{
+            console.log(e.readyState);
+        }
+    },false);
+}else{
+    console.log("浏览器不支持")
+}
+</script>
+</body>
+</html>

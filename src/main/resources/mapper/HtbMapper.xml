@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.HtbMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.Htb" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="htid" property="htid" jdbcType="VARCHAR" />
+    <result column="xmid" property="xmid" jdbcType="VARCHAR" />
+    <result column="dwmc" property="dwmc" jdbcType="VARCHAR" />
+    <result column="htje" property="htje" jdbcType="VARCHAR" />
+    <result column="qysj" property="qysj" jdbcType="VARCHAR" />
+    <result column="qddwsj" property="qddwsj" jdbcType="VARCHAR" />
+    <result column="htzt" property="htzt" jdbcType="VARCHAR" />
+    <result column="dfqyr" property="dfqyr" jdbcType="VARCHAR" />
+    <result column="xmfzr" property="xmfzr" jdbcType="VARCHAR" />
+    <result column="htlx" property="htlx" jdbcType="VARCHAR" />
+    <result column="yxrq" property="yxrq" jdbcType="VARCHAR" />
+    <result column="sflx" property="sflx" jdbcType="VARCHAR" />
+    <result column="ljht" property="ljht" jdbcType="VARCHAR" />
+    <result column="aqht" property="aqht" jdbcType="VARCHAR" />
+    <result column="zhgk" property="zhgk" jdbcType="VARCHAR" />
+    <result column="bz" property="bz" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

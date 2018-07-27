@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.ZbbMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.Zbb" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="zbbid" property="zbbid" jdbcType="VARCHAR" />
+    <result column="xmid" property="xmid" jdbcType="VARCHAR" />
+    <result column="dwmc" property="dwmc" jdbcType="VARCHAR" />
+    <result column="xmmc" property="xmmc" jdbcType="VARCHAR" />
+    <result column="bj" property="bj" jdbcType="VARCHAR" />
+    <result column="df" property="df" jdbcType="VARCHAR" />
+    <result column="fbsj" property="fbsj" jdbcType="VARCHAR" />
+    <result column="pbsj" property="pbsj" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

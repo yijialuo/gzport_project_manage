@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>发布公告-广播</title>
+</head>
+<body>
+<div>
+    <input type="text" id="announcement" />
+    <button id="sendName" onclick="sendAnnouncement();">发送</button>
+</div>
+
+<script th:src="@{../static/sockjs.min.js}"></script>
+<script th:src="@{../static/stomp.min.js}"></script>
+<script th:src="@{../static/jquery.js}"></script>
+<script>
+   var socket=new SockJS('/endpointAnnouncement');
+   var stompClient=Stomp.over(socket);
+   stompClient.connect({'user':'yijialuo'},function(message){
+       console.log("连接成功"+message);
+   })
+   function sendAnnouncement() {
+       var announcement=$('#announcement').val();
+       console.log("公告: "+announcement);
+       stompClient.send("/publishAnnouncement", {}, announcement);
+   }
+</script>
+</body>
+</html>

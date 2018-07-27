@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.ZhongbiaobMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.Zhongbiaob" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="zhongbiaoid" property="zhongbiaoid" jdbcType="VARCHAR" />
+    <result column="zbxmid" property="zbxmid" jdbcType="VARCHAR" />
+    <result column="zbdwmc" property="zbdwmc" jdbcType="VARCHAR" />
+    <result column="zbxmmc" property="zbxmmc" jdbcType="VARCHAR" />
+    <result column="zbbj" property="zbbj" jdbcType="VARCHAR" />
+    <result column="zbdf" property="zbdf" jdbcType="VARCHAR" />
+    <result column="zbfbsj" property="zbfbsj" jdbcType="VARCHAR" />
+    <result column="zbsj" property="zbsj" jdbcType="VARCHAR" />
+    <result column="bz" property="bz" jdbcType="VARCHAR" />
+    <result column="sfzzzbdw" property="sfzzzbdw" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>
